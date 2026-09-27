@@ -1,0 +1,14 @@
+{
+  "name": "abuela",
+  "display": "Abuela Remedios",
+  "kind": "difunto",
+  "relation": "nənə",
+  "note": "Beş il, beş fərqli altar. 2023-də şəkil yoxa çıxır, 2024-də cempasúchil yolu kəsilir (ruh azır → interrupt), 2025-də altar demək olar ki boşdur.",
+  "years": {
+    "2021": ["cempasúchil", "su", "duz", "pan de muerto", "copal", "şəkil", "mezcal", "şam"],
+    "2022": ["cempasúchil", "su", "pan de muerto", "copal", "şəkil", "tamales", "şam"],
+    "2023": ["cempasúchil", "su", "pan de muerto", "copal", "qəhvə"],
+    "2024": ["su", "pan de muerto", "şam"],
+    "2025": ["cempasúchil", "su"]
+  }
+}

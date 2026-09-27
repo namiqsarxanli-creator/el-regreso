@@ -1,0 +1,21 @@
+.farewell-scene {position:fixed;inset:0;width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:28px 40px;border:0;color:#f6e5c6;background:radial-gradient(ellipse at 50% 54%,#324039 0%,#152a28 38%,#091918 80%);overflow:auto;box-sizing:border-box;}
+.farewell-scene::backdrop {background:#091918;}
+.farewell-top,.farewell-bottom {position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:11px;letter-spacing:.16em;}
+.farewell-top>span {color:#c59e64;}
+.farewell-scene button {border:1px solid #857450;background:#182b27;color:#f6e5c6;min-height:44px;padding:10px 17px;letter-spacing:.02em;}
+.farewell-scene button:hover {background:#354334;border-color:#d79744;}
+.farewell-scene button:focus-visible {outline:3px solid #efa82f;outline-offset:4px;}
+.farewell-content {position:relative;z-index:1;max-width:840px;margin:26px auto 12px;text-align:center;}
+.farewell-eyebrow {font-size:10px;letter-spacing:.27em;color:#d9a14e;}
+.farewell-content h2 {font-family:Georgia,serif;font-weight:normal;font-size:clamp(28px,4.5vw,55px);line-height:1.15;margin:16px 0 0;color:#f6e5c6;}
+.farewell-art {height:min(49vh,500px);min-height:220px;display:flex;justify-content:center;align-items:center;}
+.farewell-art canvas {display:block;max-width:100%;max-height:100%;width:720px;object-fit:contain;}
+#farewell-description {font-family:Georgia,serif;font-style:italic;font-size:clamp(16px,2vw,23px);line-height:1.6;margin:0 auto;color:#ddc9a4;max-width:530px;}
+.farewell-last {min-height:1.7em;font-size:12px;letter-spacing:.08em;color:#d8a55b;}
+.farewell-bottom {max-width:840px;margin:24px auto 0;padding-top:20px;border-top:1px solid #6b603c66;font-size:10px;letter-spacing:.08em;color:#b4a58a;}
+.farewell-glow {pointer-events:none;position:fixed;inset:10% 20%;background:radial-gradient(ellipse,#dd8d2220,transparent 65%);animation:farewell-breath 6s ease-in-out infinite;}
+@keyframes farewell-breath {50%{opacity:.4;transform:scale(.9);}}
+.portrait.soul-forgotten {background-image:none!important;display:grid;place-items:center;}
+.portrait.soul-forgotten::after {content:'✿';color:#aa7835;font-size:42px;opacity:.6;}
+@media(max-width:600px){.farewell-scene{padding:20px 18px;}.farewell-top{font-size:9px;letter-spacing:.1em;}.farewell-content{margin-top:40px;}.farewell-art{height:40vh;min-height:210px;}.farewell-bottom{flex-direction:column;gap:16px;text-align:center;}.farewell-eyebrow{font-size:9px;}}
+@media(prefers-reduced-motion:reduce){.farewell-glow{animation:none;}}

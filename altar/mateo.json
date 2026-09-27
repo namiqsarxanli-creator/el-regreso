@@ -1,0 +1,14 @@
+{
+  "name": "mateo",
+  "display": "Mateíto",
+  "kind": "angelito",
+  "relation": "kiçik qardaş",
+  "note": "Angelitos — uşaq ruhları 1 noyabrda gəlir. Altarında spirtli içki olmur: süd, şokolad, oyuncaq, şəkər kəllə. Eyni qraf, başqa marşrut.",
+  "years": {
+    "2021": ["cempasúchil", "su", "süd", "şokolad", "oyuncaq", "şəkər kəllə", "şəkil"],
+    "2022": ["cempasúchil", "su", "süd", "oyuncaq", "şəkil", "copal"],
+    "2023": ["cempasúchil", "su", "süd", "şəkil"],
+    "2024": ["cempasúchil", "su", "meyvə"],
+    "2025": ["cempasúchil"]
+  }
+}

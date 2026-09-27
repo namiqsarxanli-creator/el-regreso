@@ -1,0 +1,8 @@
+altar.db
+altar.db-journal
+altar.db-wal
+altar.db-shm
+__pycache__/
+*.pyc
+.env
+.venv/

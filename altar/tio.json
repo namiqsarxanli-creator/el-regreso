@@ -1,0 +1,13 @@
+{
+  "name": "tio",
+  "display": "Tío Beto",
+  "kind": "difunto",
+  "relation": "əmi",
+  "remembrance": 25,
+  "note": "Üçüncü ölüm demosu. Tío Beto-nu artıq az adam xatırlayır (başlanğıc 25). Altar ildən-ilə boşalır: 2025-də üç əşya, 2026-da bir, 2027-də yenə bir — və xatırlanma sıfıra düşür. Üç əmr, üç il, sonra thread özü silinir.",
+  "years": {
+    "2025": ["cempasúchil", "su", "mezcal"],
+    "2026": ["cempasúchil"],
+    "2027": ["cempasúchil"]
+  }
+}

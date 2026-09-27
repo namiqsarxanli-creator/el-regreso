@@ -1,0 +1,62 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	dusk_angelitos(dusk_angelitos)
+	dusk_difuntos(dusk_difuntos)
+	read_ofrenda(read_ofrenda)
+	follow_petals(follow_petals)
+	lost(lost)
+	wait_for_family(wait_for_family)
+	taste_food(taste_food)
+	smell_copal(smell_copal)
+	see_photos(see_photos)
+	reunion(reunion)
+	judge_ofrenda(judge_ofrenda)
+	write_calaverita(write_calaverita)
+	speak_to_family(speak_to_family)
+	farewell(farewell)
+	third_death(third_death)
+	__end__([<p>__end__</p>]):::last
+	__start__ -.-> dusk_angelitos;
+	__start__ -.-> dusk_difuntos;
+	dusk_angelitos --> read_ofrenda;
+	dusk_difuntos --> read_ofrenda;
+	farewell -.-> __end__;
+	farewell -.-> third_death;
+	follow_petals -.-> lost;
+	follow_petals -.-> mictlan_crossing\3aitzcuintlan;
+	judge_ofrenda --> speak_to_family;
+	lost -.-> farewell;
+	lost -.-> wait_for_family;
+	mictlan_crossing\3areport --> see_photos;
+	mictlan_crossing\3areport --> smell_copal;
+	mictlan_crossing\3areport --> taste_food;
+	read_ofrenda --> follow_petals;
+	reunion --> judge_ofrenda;
+	reunion --> write_calaverita;
+	see_photos --> reunion;
+	smell_copal --> reunion;
+	speak_to_family --> farewell;
+	taste_food --> reunion;
+	wait_for_family --> follow_petals;
+	write_calaverita --> speak_to_family;
+	third_death --> __end__;
+	subgraph mictlan_crossing
+	mictlan_crossing\3aitzcuintlan(itzcuintlan)
+	mictlan_crossing\3atepeme_monamictlan(tepeme_monamictlan)
+	mictlan_crossing\3aitzehecayan(itzehecayan)
+	mictlan_crossing\3arest(rest)
+	mictlan_crossing\3areport(report)
+	mictlan_crossing\3aitzcuintlan --> mictlan_crossing\3atepeme_monamictlan;
+	mictlan_crossing\3aitzehecayan -.-> mictlan_crossing\3areport;
+	mictlan_crossing\3aitzehecayan -.-> mictlan_crossing\3arest;
+	mictlan_crossing\3arest --> mictlan_crossing\3aitzehecayan;
+	mictlan_crossing\3atepeme_monamictlan --> mictlan_crossing\3aitzehecayan;
+	end
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

@@ -1,0 +1,12 @@
+{
+  "name": "donchuy",
+  "display": "Don Chuy",
+  "kind": "difunto",
+  "relation": "baba",
+  "note": "Chaos testi üçün ayrıca ruh — prosesi öldürüb bərpa etməyi burada sınayırıq ki, beş illik demo pozulmasın.",
+  "years": {
+    "2024": ["cempasúchil", "su", "duz", "pan de muerto", "copal", "şəkil", "mezcal", "qəhvə"],
+    "2025": ["cempasúchil", "su", "pan de muerto", "copal", "şəkil", "siqaret"],
+    "2026": ["cempasúchil", "su", "pan de muerto", "copal", "şəkil", "tamales", "şam"]
+  }
+}

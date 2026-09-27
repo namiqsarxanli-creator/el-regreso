@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Regreso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/farewell.css">
+</head>
+<body>
+
+<!-- papel picado ------------------------------------------------------- -->
+<div class="papel" aria-hidden="true">
+  <svg viewBox="0 0 1200 54" preserveAspectRatio="none">
+    <defs>
+      <!-- Deşiklər `mask` ilə deyil, evenodd doldurma qaydası ilə açılır:
+           mask userSpaceOnUse-dur və yalnız birinci bayrağa düşürdü. -->
+      <path id="flag" fill-rule="evenodd" d="
+        M0 0 H70 V30 L35 46 L0 30 Z
+        M35 8 a6 6 0 1 0 .1 0 Z
+        M20 23 a3.2 3.2 0 1 0 .1 0 Z
+        M50 23 a3.2 3.2 0 1 0 .1 0 Z
+        M35 27 l5.5 7 -5.5 6 -5.5 -6 Z"/>
+    </defs>
+    <line x1="0" y1="3" x2="1200" y2="3" stroke="rgba(242,234,223,.25)" stroke-width="1.5"/>
+    <g id="flags"></g>
+  </svg>
+</div>
+
+<header class="head">
+  <div class="masthead"><span>✦ MÉXICO · DÍA DE MUERTOS</span><span>01 — 02 NOVIEMBRE</span></div>
+  <div class="title">
+    <span class="eyebrow">XATİRƏLƏRİN YAŞADIĞI YER</span>
+    <h1>El Regreso</h1>
+    <p>Bir gecə, hər il.<br>Sevdiklərimizə qayıdan yol.</p>
+    <span class="hero-note">Heç kim xatırlandığı müddətdə yox olmur.</span>
+  </div>
+  <figure class="collage"><img src="/static/mexican-collage.png" alt="Meksika xalq sənəti kollajı: çiçəklər, kəllə, kəpənəklər və xatirələr"><figcaption>EL ARTE DE RECORDAR <span>✦</span> XATIRLAMAQ SƏNƏTİ</figcaption></figure>
+  <div class="edition" aria-hidden="true">PARA<br>SIEMPRE <span>✷</span></div>
+  <div class="controls">
+    <label>ruh
+      <select id="soul"></select>
+    </label>
+    <label>il
+      <select id="year"></select>
+    </label>
+    <button id="run" class="primary">gecəni başlat</button>
+    <button id="forget" class="ghost" title="thread-i silir — üçüncü ölüm">unut</button>
+  </div>
+</header>
+
+<div class="chapter"><span>✦ GECƏNİN HEKAYƏSİ</span><span>Altarı hazırla. Yolu izlə. Xatirəni yaşat.</span></div>
+
+<main>
+  <!-- ofrenda ---------------------------------------------------------- -->
+  <section class="panel altar">
+    <h2><span class="section-no">01</span> Ofrenda <span class="sub" id="altar-count"></span></h2>
+    <div class="tiers">
+      <div class="tier">
+        <span class="tier-label">cielo</span>
+        <div class="items" id="tier-cielo"></div>
+      </div>
+      <div class="tier">
+        <span class="tier-label">tierra</span>
+        <div class="items" id="tier-tierra"></div>
+      </div>
+      <div class="tier">
+        <span class="tier-label">inframundo</span>
+        <div class="items" id="tier-inframundo"></div>
+      </div>
+    </div>
+    <div class="altar-cloth"></div>
+  </section>
+
+  <!-- qraf -------------------------------------------------------------- -->
+  <section class="panel graph">
+    <h2><span class="section-no">02</span> Ruhun yolu <span class="sub" id="graph-status" role="status">gözləyir</span></h2>
+    <div class="stage">
+      <svg id="canvas" viewBox="0 0 1150 470" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+    <div class="log">
+      <div class="log-head">
+        <span>LangGraph jurnalı</span>
+        <em id="voice-badge"></em>
+      </div>
+      <ol id="log"></ol>
+    </div>
+    <div class="ask" id="ask" hidden>
+      <div class="ask-body">
+        <p id="ask-text"></p>
+        <span id="ask-hint"></span>
+      </div>
+      <form id="ask-form">
+        <input id="ask-input" placeholder="altara nə qoyursan?" autocomplete="off">
+        <button class="primary">altara qoy</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- yaddaş ------------------------------------------------------------ -->
+  <section class="panel memory">
+    <h2><span class="section-no">03</span> Yaddaş</h2>
+    <div class="candle-row">
+      <div class="candle">
+        <div class="flame" id="flame"></div>
+        <div class="wax"><div class="wax-fill" id="wax"></div></div>
+      </div>
+      <div class="candle-meta">
+        <strong id="rem-value">—</strong>
+        <span>xatırlanma</span>
+        <em id="rem-note"></em>
+      </div>
+    </div>
+    <div class="verdict" id="verdict" hidden>
+      <div class="warmth"><span id="warmth-value">—</span><small>altarın istiliyi</small></div>
+      <p id="verdict-text"></p>
+      <span id="longing-text"></span>
+    </div>
+    <blockquote id="words" hidden></blockquote>
+    <div class="calaverita" id="calaverita" hidden>
+      <span class="cal-label">calaverita literaria</span>
+      <pre id="calaverita-text"></pre>
+    </div>
+    <ol class="visits" id="visits"></ol>
+  </section>
+</main>
+
+<div class="story-space">
+  <section class="panel soul-story" aria-labelledby="soul-heading">
+    <div class="portrait" id="soul-portrait" role="img"></div>
+    <div><span class="eyebrow">HƏR RUHUN BİR HEKAYƏSİ VAR</span><h2 id="soul-heading">Ruhun hekayəsi</h2><p id="soul-bio"></p><p id="soul-favorites"></p><small>Bu hekayə üçün yaradılmış bədii personajlar.</small></div>
+    <div class="sound-controls"><h3>Gecənin səsi</h3><small id="character-voice">Personajın səsi · İspanca</small><button id="ambience" aria-pressed="false">♫ Atmosferi aç</button><label>Səs səviyyəsi <input id="volume" type="range" min="0" max="100" value="25"></label><button id="narrate">Ruhun sözlərini dinlə</button><button id="stop-voice" disabled>Oxunuşu dayandır</button><small id="audio-note" role="status">Mətn azərbaycanca, personajın səsi ispancadır.</small></div>
+  </section>
+
+  <section class="panel preparation" aria-labelledby="prepare-heading">
+    <div class="section-heading"><div><span class="eyebrow">BİR HƏDİYYƏ, BİR XATİRƏ</span><h2 id="prepare-heading">Gecənin altarını hazırla</h2></div><button id="reset-offering" class="ghost">İlin altarını bərpa et</button></div>
+    <p>Əşyanı altara sürüşdür və ya üzərinə bas. Seçdiklərin növbəti gecədə istifadə olunacaq.</p>
+    <div id="gift-catalog" class="gift-catalog"></div>
+    <div id="offering-drop" class="offering-drop" aria-label="Hazırlanan altar"><h3>Hazırladığın altar <span id="draft-count"></span></h3><div id="draft-items"></div><p id="draft-note" role="status"></p></div>
+    <div class="prepare-actions"><button id="run-prepared" class="primary">Bu altarla gecəni başlat</button><span id="draft-year"></span></div>
+  </section>
+
+  <section class="panel album" aria-labelledby="album-heading"><span class="eyebrow">İLLƏR KEÇİR, XATİRƏLƏR QALIR</span><h2 id="album-heading">Xatirə albomu</h2><p id="album-context"></p><div id="album-cards" class="album-cards"></div></section>
+
+  <section class="panel comparison" aria-labelledby="compare-heading"><div class="section-heading"><div><span class="eyebrow">BƏS BAŞQA CÜR OLSAYDI?</span><h2 id="compare-heading">İki yol, bir xatirə</h2></div><button id="return-main" class="ghost" hidden>Əsas hekayəyə qayıt</button></div><p>Əsas gecə bitdikdən sonra aşağıdakı xəttdə çiçəklə işarələnən anı seç, əlavə hədiyyə yaz və yeni budaq aç.</p><label>Müqayisə edilən budaq<select id="branch-select"><option value="">Hələ budaq yoxdur</option></select></label><div id="comparison-diff" role="status"></div><div id="comparison-cards" class="comparison-cards"></div><button id="resume-branch" hidden>Budağı aç və davam et</button></section>
+</div>
+
+<!-- checkpoint xətti ---------------------------------------------------- -->
+<footer class="rail">
+  <div class="rail-head">
+    <h2>Checkpoint xətti</h2>
+    <span class="sub">bir ana klikləyib oradan yeni budaq aça bilərsən</span>
+  </div>
+  <div class="dots" id="dots"></div>
+  <form class="fork" id="fork" hidden>
+    <span id="fork-label"></span>
+    <input id="fork-gift" placeholder="altara əlavə: cempasúchil, şəkil…" autocomplete="off">
+    <button class="primary">bu andan budaqlan</button>
+    <button type="button" class="ghost" id="fork-cancel">imtina</button>
+  </form>
+</footer>
+
+<script src="/static/app.js"></script>
+<script src="/static/farewell.js?v=dramatic-2"></script>
+<script src="/static/story.js?v=spanish-characters-1"></script>
+</body>
+</html>
