@@ -6,6 +6,8 @@
 
 🇦🇿 [Azərbaycan dilində](README.az.md)
 
+![El Regreso web UI — choose a spirit and a year, then run the night](docs/screenshots/altar.jpg)
+
 ## What it does
 
 A spirit returns home on the night of 1–2 November. It goes through these steps:
